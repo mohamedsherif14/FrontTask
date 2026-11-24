@@ -1,0 +1,143 @@
+
+[
+  {
+    "title": "ماوس لاسلكي",
+    "category": "اكسسوارات",
+    "price": 250,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "كيبورد ميكانيكي",
+    "category": "الكترونيات",
+    "price": 850,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "سماعة بلوتوث",
+    "category": "صوتيات",
+    "price": 650,
+    "availability": false,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "شاحن سريع",
+    "category": "اكسسوارات",
+    "price": 180,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "شاشة كمبيوتر",
+    "category": "الكترونيات",
+    "price": 4200,
+    "availability": false,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "ماوس جيمينج",
+    "category": "جيمينج",
+    "price": 450,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "باور بانك",
+    "category": "اكسسوارات",
+    "price": 550,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "هارد SSD",
+    "category": "تخزين",
+    "price": 1800,
+    "availability": false,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "فلاشة USB",
+    "category": "تخزين",
+    "price": 220,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "سماعة رأس",
+    "category": "صوتيات",
+    "price": 950,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "كابل USB",
+    "category": "اكسسوارات",
+    "price": 90,
+    "availability": false,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "كاميرا ويب",
+    "category": "الكترونيات",
+    "price": 1200,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "يد تحكم",
+    "category": "جيمينج",
+    "price": 750,
+    "availability": false,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "لابتوب",
+    "category": "الكترونيات",
+    "price": 25000,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "ستاند لابتوب",
+    "category": "اكسسوارات",
+    "price": 350,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "ميكروفون",
+    "category": "صوتيات",
+    "price": 1100,
+    "availability": false,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "كارت ميموري",
+    "category": "تخزين",
+    "price": 300,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "كيبورد لاسلكي",
+    "category": "اكسسوارات",
+    "price": 600,
+    "availability": false,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "راوتر واي فاي",
+    "category": "شبكات",
+    "price": 1400,
+    "availability": true,
+    "image": "products/Mouse.png"
+  },
+  {
+    "title": "سماعة جيمينج",
+    "category": "جيمينج",
+    "price": 1300,
+    "availability": true,
+    "image": "products/Mouse.png"
+  }
+]

@@ -2,8 +2,8 @@ import { products } from "./data.js";
 
 window.onload = ()=>{
     ShowData("cardsCont" , products , "productsNumber")
-    console.log("MOHAMED");
-    
+    showCategory("categoriesList" , GetCategory(products));
+
     }
 
 function ShowData(containerId, data , productsNumberId){
@@ -22,14 +22,13 @@ function ShowData(containerId, data , productsNumberId){
             _class = "red"
             _text ="غير متاح"
         }
-        console.log(Element.image);
         
         container.innerHTML +=
         `
                     <div class="card">
             <img src=${Element.image} alt=${Element.title}>
             <div class="info">
-                <p>${Element.category}</p>
+                <p class="category">${Element.category}</p>
                 <h4>${Element.title}</h4>
                 <div class="price-box">
                     <h5 class="price">${Element.price + " ج.م"}</h5>
@@ -41,5 +40,58 @@ function ShowData(containerId, data , productsNumberId){
     });
 
 }
+function GetCategory(Data){
+    let categories = [...new Set(Data.map(e=> e.category))]
+    return categories
+}
 
 
+function showCategory(id , data) {
+    let categoriesList = document.getElementById(id);
+    categoriesList.innerHTML=`<option value="كل التصنيفات">كل التصنيفات</option>`
+    data.forEach(e=>{
+        categoriesList.innerHTML +=
+        `
+                            <option value=${e} >${e}</option>
+
+        `
+    })
+}
+    let categories= document.querySelector(".FilterBox");
+
+    categories.addEventListener("change" , ()=>{
+        let productsHead = document.getElementById("ProductsHead");
+        if(categories.value == "كل التصنيفات"){
+                ShowData("cardsCont" , products , "productsNumber")
+                productsHead.innerHTML = "كل المنتجات"
+        }else
+        {
+            ShowData("cardsCont" , filter(products , categories.value), "productsNumber");
+            productsHead.innerHTML = categories.value
+        }
+        
+    })
+
+    function filter(data , value){
+        let filterdData =data.filter(e=>{
+            return e.category == value
+        })
+        return filterdData;
+    }
+
+let searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input" , ()=>{
+    let searchValue = searchInput.value.toLowerCase();
+    let serchProducts
+    if (categories.value =="كل التصنيفات") {
+        serchProducts = products
+    } else {
+        serchProducts = filter(products , categories.value)
+    }
+    let serchedProducts = serchProducts.filter((product)=>{
+        return product.title.toLowerCase().includes(searchValue);
+    })
+        ShowData("cardsCont" , serchedProducts , "productsNumber")
+
+})
