@@ -6,12 +6,30 @@ window.onload = ()=>{
 
     }
 
-function ShowData(containerId, data , productsNumberId){
+async function  ShowData(containerId, data , productsNumberId){
     let productsNumber = document.getElementById(productsNumberId)
     let container = document.getElementById(containerId);
     let numberOfProducts = data.length
     productsNumber.innerHTML = numberOfProducts + " منتجات"
+    container.classList.add("fade-out");
+    
+        await new Promise(resolve => {
+
+        container.addEventListener("transitionend", function handler(e) {
+
+            if (e.target === container && e.propertyName === "opacity") {
+
+                container.removeEventListener("transitionend", handler);
+
+                resolve();
+            }
+
+        });
+
+    });
+
     container.innerHTML =``
+    
     data.forEach((Element,i) => {
         let _class;
         let _text
@@ -37,7 +55,10 @@ function ShowData(containerId, data , productsNumberId){
             </div>
         </div>
         `
+
+
     });
+            container.classList.remove("fade-out");
 
 }
 function GetCategory(Data){
@@ -89,6 +110,7 @@ searchInput.addEventListener("input" , ()=>{
     } else {
         serchProducts = filter(products , categories.value)
     }
+    
     let serchedProducts = serchProducts.filter((product)=>{
         return product.title.toLowerCase().includes(searchValue);
     })

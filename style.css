@@ -204,3 +204,12 @@ footer p{
 .green{
     color: green;
 }
+
+#cardsCont {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#cardsCont.fade-out {
+    opacity: 0;
+}
