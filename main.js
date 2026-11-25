@@ -17,9 +17,19 @@ async function  ShowData(containerId, data , productsNumberId){
 
     container.innerHTML =``
     
+
+    if (data.length == 0) {
+        container.innerHTML =`<h1 class="notFound">لا توجد منتجات ب هذا الاسم</h1>`
+    }
+
     data.forEach((Element,i) => {
         let _class;
         let _text
+
+        if (Element.title.length > 15) {
+            Element.title = Element.title.slice(0,15) + ".....";
+        }
+
         if (Element.availability) {
             _class = "green"
             _text ="متاح"
@@ -27,9 +37,10 @@ async function  ShowData(containerId, data , productsNumberId){
             _class = "red"
             _text ="غير متاح"
         }
+
         
         container.innerHTML +=
-        `
+        `   
                     <div class="card">
             <img src=${Element.image} alt=${Element.title}>
             <div class="info">
@@ -105,6 +116,8 @@ searchInput.addEventListener("input" , ()=>{
     let serchedProducts = serchProducts.filter((product)=>{
         return product.title.toLowerCase().includes(searchValue);
     })
+
+    
         ShowData("cardsCont" , serchedProducts , "productsNumber")
 
 })
