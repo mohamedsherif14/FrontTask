@@ -11,22 +11,9 @@ async function  ShowData(containerId, data , productsNumberId){
     let container = document.getElementById(containerId);
     let numberOfProducts = data.length
     productsNumber.innerHTML = numberOfProducts + " منتجات"
-    container.classList.add("fade-out");
-    
-        await new Promise(resolve => {
+  
 
-        container.addEventListener("transitionend", function handler(e) {
 
-            if (e.target === container && e.propertyName === "opacity") {
-
-                container.removeEventListener("transitionend", handler);
-
-                resolve();
-            }
-
-        });
-
-    });
 
     container.innerHTML =``
     
@@ -58,7 +45,11 @@ async function  ShowData(containerId, data , productsNumberId){
 
 
     });
-            container.classList.remove("fade-out");
+container.classList.remove("fade");
+
+void container.offsetWidth;
+
+container.classList.add("fade");
 
 }
 function GetCategory(Data){

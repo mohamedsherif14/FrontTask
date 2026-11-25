@@ -205,11 +205,15 @@ footer p{
     color: green;
 }
 
-#cardsCont {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+.fade {
+animation: fade 0.4s ease;
 }
 
-#cardsCont.fade-out {
-    opacity: 0;
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
 }
